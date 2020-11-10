@@ -1,0 +1,320 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    max-width: 1024px;
+    font-size: 1.0em;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Lato", "Calibri", Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto-flow min-content;
+    /* gap: 1em; */
+}
+
+
+header,
+main,
+aside,
+.heading,
+footer {
+    grid-column: 1/13;
+}
+
+/* - * - * - * - * - * - * - * - */
+/* * * Headings * * */
+/* - * - * - * - * - * - * - * - */
+
+h1,
+h2 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.6em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* ---------------------------------------------------------------- */
+/* * * * * * * * * *  * * * Homepage * * * * * * * * * * * * */
+/* ---------------------------------------------------------------- */
+
+/* - * - * - * - * - * - * - * - */
+/* * * Header (Homepage and some other pages) Stylings */
+/* - * - * - * - * - * - * - * - */
+
+.homepage-header {
+    height: 100vh;
+    background: url(../images/header2131.jpg) center no-repeat;
+    background-size: cover;
+
+}
+
+.homepage-header,
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.homepage-header>nav,
+header>nav {
+    width: 80%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_wrapper {
+    height: 100%;
+    width: 150px;
+    background: green;
+}
+
+header nav>ul {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header>nav ul li {
+    position: relative;
+    margin-left: 1em;
+}
+
+header>nav li:hover {
+    transform: scale(1.1, 1.1);
+    transition: .5s;
+    cursor: pointer;
+}
+
+header>nav a {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    padding: 0.5em;
+    position: relative;
+}
+
+header>nav a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 90%;
+    position: absolute;
+    background: #B3AD37;
+    border-radius: 1em;
+    transition: width 0.5s ease 0s, left 0.5s ease 0s;
+    width: 0;
+}
+
+header>nav a:hover:after {
+    width: 80%;
+    left: 10%;
+}
+
+header>nav a:hover {
+    color: #B3AD37;
+
+}
+
+header>nav a:focus {
+    outline: 0;
+}
+
+/* - * - * - * - * - * - * - * - */
+/* * * Main (Homepage) * * */
+/* - * - * - * - * - * - * - * - */
+
+main {
+    background: url(../images/avocado.png) left 45% top 22% no-repeat, url(../images/mushroom.png) left 30% bottom 2% no-repeat, url(../images/onion.png) right 8% top 5% no-repeat, url(../images/pumpkin.png) right 10% top 50% no-repeat, url(../images/lettuce.png) right 33% top 33% no-repeat, url(../images/pepper.png) right 15% top 0 no-repeat, url(../images/tomato.png) left 10% top 30% no-repeat, url(../images/salad.png) left 5% top 53% no-repeat, url(../images/eggplant.png) left 35% top 50% no-repeat, url(../images/cucumber.png) left 5% bottom 25% no-repeat, url(../images/carrot.png) left 5% top 5% no-repeat, url(../images/beans.png) right 24% bottom 19% no-repeat;
+    background-size: 45px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+    align-content: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cart {
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart h2+p {
+    margin-top: 1.5em;
+    margin-left: 2em;
+    width: 80%;
+}
+
+/* - * - * - * - * - * - * - * - */
+/* * * ASIDE (Main Page) * * */
+/* - * - * - * - * - * - * - * - */
+
+aside {
+
+    height: 100vh;
+    width: 100%;
+    background: url(../images/shutterstock_1090498637.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/* - * - * - * - * - * - * - * - */
+/* Footer (Styling Apply to All Pages ) */
+/* - * - * - * - * - * - * - * - */
+
+footer {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    background: url(../images/footer.jpg) center no-repeat;
+}
+
+footer>nav {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer>nav ul {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #fff;
+}
+
+footer>nav ul li {
+    margin-top: 0.3em;
+    font-size: 0.8em;
+}
+
+/* ---------------------------------------------------------------- */
+/* * * * * * * * * *  * * * Contact Us Page * * * * * * * * * * * * */
+/* ---------------------------------------------------------------- */
+
+/* - * - * - * - * - * - * - * - */
+/* * * Contact Us Header Stylings */
+/* - * - * - * - * - * - * - * - */
+
+.contactUs-header {
+    background: url(../images/footer.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/* - * - * - * - * - * - * - * - */
+/* * * heading (Contact Page) * * */
+/* - * - * - * - * - * - * - * - */
+
+.heading {
+    width: 100%;
+    height: 35vh;
+    background: url(../images/conatct.jpg) bottom no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.heading::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.479);
+    filter: sepia(0.8);
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.heading h1 {
+    color: #fff;
+    z-index: 10;
+
+}
+
+/* - * - * - * - * - * - * - * - */
+/* * * Main (Contact Page) * * */
+/* - * - * - * - * - * - * - * - */
+
+.contactUs-main {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+/* Div holding contact address*/
+
+.contact-address {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-address span {
+    display: block;
+}
+
+/* Google map */
+iframe {
+    min-height: 400px;
+}
+
+/* Contact Form */
+form {
+    width: 100%;
+    min-height: 400px;
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* List of shops */
+.shops-addresses {
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
