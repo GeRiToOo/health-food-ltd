@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+body,
+html {
     height: 100%;
 }
+
 
 body {
     max-width: 1024px;
@@ -16,10 +17,8 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto-flow min-content;
-    /* gap: 1em; */
+    /* grid-template-rows: auto-flow min-content; */
 }
-
 
 header,
 main,
@@ -27,6 +26,7 @@ aside,
 .heading,
 footer {
     grid-column: 1/13;
+
 }
 
 /* - * - * - * - * - * - * - * - */
@@ -39,46 +39,89 @@ h2 {
 }
 
 h1 {
-    font-size: 3.6em;
+    font-size: 3em;
 }
 
 h2 {
     font-size: 2em;
 }
 
-/* ---------------------------------------------------------------- */
-/* * * * * * * * * *  * * * Homepage * * * * * * * * * * * * */
-/* ---------------------------------------------------------------- */
+/* ---------------------------------------------------------- 
+* * * * * * * * * *  * * * Homepage * * * * * * * * * * * * *
+* -----------------------------------------------------------*/
 
-/* - * - * - * - * - * - * - * - */
-/* * * Header (Homepage and some other pages) Stylings */
-/* - * - * - * - * - * - * - * - */
-
+/* ------------------------------------
+ * * * * * * * * HEADER * * * * * * * *
+--------------------------------------*/
 .homepage-header {
     height: 100vh;
-    background: url(../images/header2131.jpg) center no-repeat;
-    background-size: cover;
-
+    position: relative;
 }
 
-.homepage-header,
-header {
+.homepage-header:before {
+    content: "";
+    background: url(../images/dsadsasa.png) top no-repeat;
+    background-position: contain;
+    background-size: contain;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+.heading {
+    width: 100%;
+    height: 200px;
+    padding: 1em;
+    position: absolute;
+    background: rgba(62, 164, 248, 0.527);
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    z-index: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.heading h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merienda', cursive;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url(../images/lunch-box-with-chicken-bulgur-microgreens-tomato-fruit.jpg) center no-repeat;
+    background-attachment: fixed;
+    background-position: cover;
+    background-size: cover;
+    z-index: -1;
 }
 
 .homepage-header>nav,
 header>nav {
+    position: absolute;
     width: 80%;
-    height: 90px;
+    height: 80px;
+    left: 10%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+
 }
 
 .logo_wrapper {
-    height: 100%;
-    width: 150px;
-    background: green;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #be159a;
 }
 
 header nav>ul {
@@ -100,7 +143,7 @@ header>nav li:hover {
 }
 
 header>nav a {
-    color: #fff;
+    color: rgb(0, 0, 0);
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
@@ -120,7 +163,7 @@ header>nav a:after {
     left: 50%;
     top: 90%;
     position: absolute;
-    background: #B3AD37;
+    background: #be159a;
     border-radius: 1em;
     transition: width 0.5s ease 0s, left 0.5s ease 0s;
     width: 0;
@@ -132,189 +175,325 @@ header>nav a:hover:after {
 }
 
 header>nav a:hover {
-    color: #B3AD37;
-
+    color: #be159a;
 }
 
 header>nav a:focus {
     outline: 0;
 }
 
-/* - * - * - * - * - * - * - * - */
-/* * * Main (Homepage) * * */
-/* - * - * - * - * - * - * - * - */
+/* ----------------------------------
+ * * * * * * * * MAIN * * * * * * * *
+-------------------------------------*/
 
 main {
-    background: url(../images/avocado.png) left 45% top 22% no-repeat, url(../images/mushroom.png) left 30% bottom 2% no-repeat, url(../images/onion.png) right 8% top 5% no-repeat, url(../images/pumpkin.png) right 10% top 50% no-repeat, url(../images/lettuce.png) right 33% top 33% no-repeat, url(../images/pepper.png) right 15% top 0 no-repeat, url(../images/tomato.png) left 10% top 30% no-repeat, url(../images/salad.png) left 5% top 53% no-repeat, url(../images/eggplant.png) left 35% top 50% no-repeat, url(../images/cucumber.png) left 5% bottom 25% no-repeat, url(../images/carrot.png) left 5% top 5% no-repeat, url(../images/beans.png) right 24% bottom 19% no-repeat;
-    background-size: 45px 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
-    align-content: center;
-    justify-content: center;
+    position: relative;
+    width: 100%;
 }
 
-.wrapper {
-    width: 100%;
-    height: 100%;
+.parallax,
+.parallax2,
+.parallax3 {
+    background-attachment: fixed;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.parallax {
+    background-image: url(../images/composition-with-glass-watermelon-juice-slices-pink-table.jpg);
+    height: 600px;
 }
 
-.cart {
+.parallax2 {
+    height: 600px;
+    background-image: url(../images/assortment-veggies-green-background-with-copy-space.jpg);
+}
+
+.parallax3 {
+    height: 600px;
+    background-image: url(../images/top-view-fruits-blue-background.jpg);
+}
+
+.badges::before {
+    content: "";
+    background: url(../images/wave.png) top no-repeat;
+    background-position: contain;
+    background-size: contain;
     width: 100%;
-    min-height: 300px;
-    height: 100%;
+    height: 200px;
+    position: absolute;
+    top: -40%;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.badges::after {
+    content: "";
+    background: url(../images/wave1.png) top no-repeat;
+    background-position: contain;
+    background-size: contain;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: -50%;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.badges {
+    background-color: #fff;
+    position: relative;
+    height: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.cart h2+p {
-    margin-top: 1.5em;
-    margin-left: 2em;
-    width: 80%;
+.badges img {
+    width: 220px;
+    height: 200px;
+    z-index: 20;
 }
 
-/* - * - * - * - * - * - * - * - */
-/* * * ASIDE (Main Page) * * */
-/* - * - * - * - * - * - * - * - */
-
-aside {
-
-    height: 100vh;
-    width: 100%;
-    background: url(../images/shutterstock_1090498637.jpg) center no-repeat;
-    background-size: cover;
+.text {
+    position: relative;
+    height: 300px;
+    width: 500px;
+    border-radius: 1em;
 }
+
+.text h2 {
+    padding: 1.8em 1.2em 0.4em 1.5em;
+}
+
+.text p {
+    padding: 0 2.9em;
+}
+
+.juice {
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    background: rgba(66, 183, 252, 0.815);
+}
+
+.juice h2 {
+    color: rgb(207, 1, 1);
+}
+
+.juice p {
+    color: rgb(27, 133, 0);
+}
+
+.vegetables {
+    top: 50%;
+    right: -45%;
+    transform: translate(0, -50%);
+    background: rgba(248, 62, 87, 0.856);
+}
+
+.vegetables h2 {
+    color: rgb(158, 253, 123);
+}
+
+.vegetables p {
+    color: rgb(245, 237, 129);
+}
+
+.fruits {
+    top: 50%;
+    left: 5%;
+    transform: translate(0, -50%);
+    background: rgba(248, 220, 62, 0.856);
+}
+
+.fruits h2 {
+    color: rgb(204, 6, 6);
+}
+
+.fruits p {
+    color: rgb(146, 2, 2);
+}
+
+.border {
+    background: url(../images/wavesss.png) center no-repeat;
+    background-position: contain;
+    background-size: contain;
+    width: 110%;
+    height: 350px;
+    position: absolute;
+
+    z-index: 1;
+}
+
+.first {
+    top: 30%;
+    left: -1px;
+}
+
+.second {
+    bottom: 20%;
+    left: -1px;
+}
+
 
 /* - * - * - * - * - * - * - * - */
 /* Footer (Styling Apply to All Pages ) */
 /* - * - * - * - * - * - * - * - */
 
 footer {
-    height: 200px;
+    position: relative;
+    min-height: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
-    overflow: hidden;
-    background: url(../images/footer.jpg) center no-repeat;
-}
-
-footer>nav {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    background: #ffff;
+    z-index: 1;
+    color: #000;
 }
 
-footer>nav ul {
-    height: 70%;
+footer:before {
+    content: "";
+    background: url(../images/wave.png) top no-repeat;
+    background-position: contain;
+    background-size: contain;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    z-index: -1;
+}
+
+.footer-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Categories */
+.footer-container>nav h2 {
+    font-size: 1em;
+    /* color: #000; */
+}
+
+.footer-container>nav ul li {
+    /* margin-top: 0.1em; */
+}
+
+.footer-container>nav ul li:first-of-type {
+    margin-top: 0.2em;
+}
+
+.footer-container>nav ul li a {
+    /* color: #000; */
+    font-size: 0.8em;
+    text-decoration: none;
+}
+
+
+/* Address */
+
+.footer-container>address {
+    /* color: #fff; */
+}
+
+.footer-container>address h2 {
+    /* color: #fff; */
+    font-size: 1em;
+}
+
+
+address>ul li i {
+    font-size: 0.8em;
+}
+
+.footer-container>address span {
+    font-size: 0.8em;
+}
+
+.footer-container>address li:first-of-type span {
+    display: block;
+    margin-left: 1.2em;
+}
+
+.footer-container>address li:first-of-type span:first-of-type {
+    display: inline-block;
+    margin: 0;
+}
+
+.footer-container>address li a {
+    /* color: #fff; */
+}
+
+/* Social Media */
+
+.social-media {
+    min-width: 130px;
+    min-height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: #fff;
 }
 
-footer>nav ul li {
+.social-media h2 {
+    font-size: 1em;
+    /* color: #fff; */
+}
+
+.social-media>ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-media>ul li {
+    margin-right: 0.5em;
+    /* color: #fff; */
+}
+
+.social-media>ul li a {
     margin-top: 0.3em;
+    font-size: 1.5em;
+    /* color: #fff; */
+}
+
+
+/* Terms */
+.terms {
+    width: 80%;
+    min-height: 40px;
+    margin-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #000;
+}
+
+.terms p {
+    font-size: 0.8em;
+    /* color: #fff; */
+}
+
+.terms>ul {
+    min-width: 310px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terms>ul li a {
+    text-decoration: none;
+    /* color: #fff; */
     font-size: 0.8em;
 }
+
 
 /* ---------------------------------------------------------------- */
 /* * * * * * * * * *  * * * Contact Us Page * * * * * * * * * * * * */
 /* ---------------------------------------------------------------- */
-
-/* - * - * - * - * - * - * - * - */
-/* * * Contact Us Header Stylings */
-/* - * - * - * - * - * - * - * - */
-
-.contactUs-header {
-    background: url(../images/footer.jpg) center no-repeat;
-    background-size: cover;
-}
-
-/* - * - * - * - * - * - * - * - */
-/* * * heading (Contact Page) * * */
-/* - * - * - * - * - * - * - * - */
-
-.heading {
-    width: 100%;
-    height: 35vh;
-    background: url(../images/conatct.jpg) bottom no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.heading::before {
-    content: "";
-    background: rgba(0, 0, 0, 0.479);
-    filter: sepia(0.8);
-    display: block;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    position: absolute;
-}
-
-.heading h1 {
-    color: #fff;
-    z-index: 10;
-
-}
-
-/* - * - * - * - * - * - * - * - */
-/* * * Main (Contact Page) * * */
-/* - * - * - * - * - * - * - * - */
-
-.contactUs-main {
-    margin-top: 3em;
-    margin-bottom: 3em;
-}
-
-/* Div holding contact address*/
-
-.contact-address {
-    /* background-color: pink; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-address span {
-    display: block;
-}
-
-/* Google map */
-iframe {
-    min-height: 400px;
-}
-
-/* Contact Form */
-form {
-    width: 100%;
-    min-height: 400px;
-    /* background: green; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* List of shops */
-.shops-addresses {
-    /* background-color: yellow; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
